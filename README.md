@@ -13,6 +13,14 @@ Similar tools
 -------------
 I think this [project][medialab] was doing what I had in mind, but I didn’t manage to make it work, yet. I’ve some issues with mongo and starting the server.
 
+Similar stuff for Scopus
+------------------------
+https://github.com/argaen/citations_crawler
+https://github.com/McKenzieKohn/scopus_spider
+https://github.com/giamo/scopus-search-api-client
+http://dev.elsevier.com/blog.html
+
+
 
 [scholarpy]:https://github.com/ckreibich/scholar.py
 [medialab]:https://github.com/medialab/scholarScape#fork-some-code
