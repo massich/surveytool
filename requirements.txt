@@ -8,6 +8,7 @@ gscholar==1.3.0
 idna==2.0
 ipaddress==1.0.14
 ndg-httpsclient==0.4.0
+pbr==1.8.1
 pyasn1==0.1.8
 pycparser==2.14
 pyOpenSSL==0.15.1
@@ -15,3 +16,7 @@ python-dateutil==2.4.2
 requests==2.7.0
 scholarly==0.2
 six==1.9.0
+stevedore==1.9.0
+virtualenv==13.1.2
+virtualenv-clone==0.2.6
+virtualenvwrapper==4.7.1
