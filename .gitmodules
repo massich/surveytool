@@ -1,3 +1,6 @@
 [submodule "doc/paper"]
 	path = doc/paper
 	url = git@github.com:massich/bus-survey.git
+[submodule "src/scholar"]
+	path = src/scholar
+	url = https://github.com/ckreibich/scholar.py.git
