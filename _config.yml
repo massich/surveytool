@@ -4,9 +4,32 @@ email: joan.massich@u-bourgogne.fr
 description: > # this means to ignore newlines until "baseurl:"
   Breast lesion segmentation in ultrasound images survey
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+url: "" #"http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: i2cvb
 github_username:  i2cvb
 
 # Build settings
 markdown: kramdown
+
+gems:
+  - jemoji
+exclude:
+  - "README.md"
+  - "CHANGELOG.md"
+  - "CNAME"
+  - "Gemfile"
+  - "Gemfile.lock"
+permalink: :title
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
