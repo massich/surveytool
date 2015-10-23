@@ -52,9 +52,15 @@ def get_target_journals():
 
 
 if __name__ == "__main__":
-    for x in get_target_journals():
+    journals = get_target_journals()
+    for x in journals:
         print '|[{0:s}]|[{1:s}]|{2:s}|'.format(x[u'issn'], x[u'name'], x[u'abbr'])
 
-    for x in get_target_journals():
+    for x in journals:
         print '[{0:s}]: {1:s}'.format(x[u'issn'],x[u'issn_url'])
         print '[{0:s}]: {1:s}'.format(x[u'name'],x[u'url'])
+
+    import pickle
+    file = open('journals.txt', 'w')
+    pickle.dump(journals, file)
+    file.close()

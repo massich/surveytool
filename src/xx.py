@@ -1,77 +1,51 @@
-def get_target_journals():
-    """Find the ISSN of the Journals that appear at Journal Citation Reports (JCR) 2014
-    under both categories: Engineering Biomedical and radiology"""
-    # Import url request
-    try:
-        # Try importing for Python 3
-        # pylint: disable-msg=F0401
-        # pylint: disable-msg=E0611
-        from urllib.request import Request
-    except ImportError:
-        # Fallback for Python 2
-        from urllib2 import Request
+def test_bibtexparser():
+    import bibtexparser
 
-    # Import BeautifulSoup -- try 4 first, fall back to older
-    try:
-        from bs4 import BeautifulSoup
-    except ImportError:
-        try:
-            from BeautifulSoup import BeautifulSoup
-        except ImportError:
-            print('We need BeautifulSoup, sorry...')
-            sys.exit(1)
+    with open('../scratch/thesis_methods.bib') as bibtex_file:
+        bibtex_str = bibtex_file.read()
 
-    
+    bib_database = bibtexparser.loads(bibtex_str)
 
-    target_journals_issn = ['0031-9155', '0161-7346', '0278-0062', '0895-6111', '1361-8415', '1861-6410']
+    list_of_journals = set([i.get(u'journal') for i in bib_database.entries])
+    titles = [i.get(u'title') for i in bib_database.entries]
 
+    for l in list_of_journals:
+        print l
+    print 'xxxxxxxxxxxxxxxxx'
+    for t in titles:
+        print t
 
-import bibtexparser
+def test_scholar(xx):
+    # Create the querier and its options
+    querier = ScholarQuerier()
+    settings = ScholarSettings()
+    settings.set_citation_format(ScholarSettings.CITFORM_BIBTEX)
+    # querier.apply_settings should be in an assert == ture. when false no internet
+    querier.apply_settings(settings)
 
-with open('../scratch/thesis_methods.bib') as bibtex_file:
-    bibtex_str = bibtex_file.read()
+    # Create the query options
+    query = SearchScholarQuery()
+    query.set_num_page_results(100)
+    query.set_words("breast+ultrasound|sonography")
+    query.set_words_some("ultrasound sonography, segmentation contouring")
+    query.set_timeframe(start=2009)
+    query.set_pub(xx)
 
-bib_database = bibtexparser.loads(bibtex_str)
+    print query.get_url()
 
-list_of_journals = set([i.get(u'journal') for i in bib_database.entries])
-print list_of_journals
-
-
+    # querier.send_query(query)
+    # citation_export(querier)
 
 
-# import scholarly
+if __name__ == '__main__':
+    from scholar.scholar import *
+    # from journals import get_target_journals
+    # list_of_journals = get_target_journals()
+    import pickle
+    file = open('journals.txt', 'r')
+    list_of_journals = pickle.load(file)
+    file.close()
+    # print list_of_journals
 
-# xx=[x for x in scholarly.search_author('massich')]
-
-
-# # Retrieve the author's data, fill-in, and print
-# search_query = scholarly.search_author('Steven A Cholewiak')
-# author = next(search_query).fill()
-# print author
-
-# # Print the titles of the author's publications
-# print [pub.bib['title'] for pub in author.publications]
-
-# # Take a closer look at the first publication
-
-# print pub
-
-# # Which papers cited that publication?
-# print [citation.bib['title'] for citation in pub.citedby()]
-
-
-
-#### ####
-from scholar.scholar import *
-
-querier = ScholarQuerier()
-settings = ScholarSettings()
-
-settings.set_citation_format(ScholarSettings.CITFORM_BIBTEX)
-querier.apply_settings(settings)
-
-query = SearchScholarQuery()
-query.set_pub()
-
-
-
+    test_scholar(list_of_journals[0][u'name'])
+    # test_bibtexparser()
