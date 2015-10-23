@@ -25,14 +25,18 @@ The journals that appear in both categories
 
 ### Selected journals
 
-| ISSN        | Jornal Name                                 |
-| :---------: | :------------------------------------------ |
-| [0031-9155] | [Physics in Medicine and Biology]           |
-| [0161-7346] | [Ultrasonic Imaging]                        |
-| [0278-0062] | [IEEE transactions on medical imaging]      |
-| [0895-6111] | [Computerized Medical Imaging and Graphics] |
-| [1361-8415] | [Medical Image Analysis]                    |
-| [1861-6410] | [Computer-Assisted Radiology and Surgery]   |
+| ISSN        | Jornal Name                                 | Abbreviation                    |
+| :---------: | :------------------------------------------ | :----------:                    |
+| [0031-9155] | [Physics in Medicine and Biology]           | Phys Med Biol                   |
+| [0161-7346] | [Ultrasonic Imaging]                        | Ultrason Imaging                |
+| [0278-0062] | [IEEE transactions on medical imaging]      | IEEE Trans Med Imaging          |
+| [0895-6111] | [Computerized Medical Imaging and Graphics] | Comput Med Imaging Graph        |
+| [1361-8415] | [Medical Image Analysis]                    | Med Image Anal                  |
+| [1861-6410] | [Computer-Assisted Radiology and Surgery]   | Int J Comput Assist Radiol Surg |
+
+
+
+
 
 [0031-9155]: http://www.issn.cc/0031-9155
 [Physics in Medicine and Biology]: http://iopscience.iop.org/0031-9155
