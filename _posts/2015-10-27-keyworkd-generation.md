@@ -20,6 +20,7 @@ To my understand, NLTK is a low-level library that extract language elements at 
 
 At this point, we have moved to explore libraries that are able to automatically tag text or use snippets using **NLTK**. If this is not enough, we’ll come back to **NLTK**.
 So far here are some tools to explore:
+- [ Article ](http://conjugateprior.org/software/ca-in-python/) showing how to get keywords in context for content analysis
 - Using **NLTK**
   - [NLTK example](http://stackoverflow.com/questions/2661778/tag-generation-from-a-text-content)
   - [Demonstration of extracting key phrases with NLTK in Python](https://gist.github.com/alexbowe/879414)
