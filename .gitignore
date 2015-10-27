@@ -1,3 +1,4 @@
-scratch/jcr.gnumeric
+scratch/
 *.pyc
-
+doc/NaturalLanguageProcessingWithPython.pdf
+remember.txt
