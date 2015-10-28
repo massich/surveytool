@@ -18,3 +18,6 @@ operations like cropping, copying, rotating etc..
 
 So we decided to directly use **PDFMiner** and make the helper functions we
 need to wrap around it.
+[This](http://www.unixuser.org/~euske/python/pdfminer/programming.html)
+document helped us to understand the structure of the library to be able to
+work with it
