@@ -1,9 +1,6 @@
 [submodule "doc/paper"]
 	path = doc/paper
 	url = git@github.com:massich/bus-survey.git
-[submodule "third-party/slate"]
-	path = third-party/slate
-	url = https://github.com/timClicks/slate.git
 [submodule "third-party/scholar"]
 	path = third-party/scholar
 	url = https://github.com/I2Cvb/scholar.py.git
