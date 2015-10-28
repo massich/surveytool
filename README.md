@@ -66,6 +66,12 @@ This project has been structured using this [rr-init repository] as a template.
     |- scratch/              # temporary files that can be safely deleted or lost
     |- src/                  # any programmatic code
     |
+    |- third-party/          # GIT submodules pointing to needed libraries. The
+    |                        # libaries are placed in this manner so that they can
+    |                        # be installed from here if they are not present at
+    |                        # PyPI (because they are experimental, they are some
+    |                        # snippets of other code etc..)
+    |
     |- requirements.txt      # list of the required packages (see virtualenv)
     |
     |- LICENSE.md
@@ -80,5 +86,7 @@ Todo
 ### General
 
 ### Coding
+- [x] move libraries as third-party
+- [ ] Journal info collection uses BeautifulSoup 4.4 while scholar.py 3.2
 
 
