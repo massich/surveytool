@@ -20,4 +20,6 @@ So we decided to directly use **PDFMiner** and make the helper functions we
 need to wrap around it.
 [This](http://www.unixuser.org/~euske/python/pdfminer/programming.html)
 document helped us to understand the structure of the library to be able to
-work with it
+work with it.
+
+For further cleaning of the output, [this](http://stackoverflow.com/questions/3621296/python-cleaning-up-a-string) post at stackoverflow might come in handy.
