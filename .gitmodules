@@ -4,3 +4,6 @@
 [submodule "third-party/scholar"]
 	path = third-party/scholar
 	url = https://github.com/I2Cvb/scholar.py.git
+[submodule "src/layout_scanner"]
+	path = src/layout_scanner
+	url = https://github.com/massich/pdfminer-layout-scanner.git
