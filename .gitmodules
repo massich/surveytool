@@ -7,3 +7,6 @@
 [submodule "src/layout_scanner"]
 	path = src/layout_scanner
 	url = https://github.com/massich/pdfminer-layout-scanner.git
+[submodule "third-party/corpkit"]
+	path = third-party/corpkit
+	url = https://github.com/interrogator/corpkit.git
