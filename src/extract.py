@@ -48,6 +48,44 @@ def get_text(pdf_doc, pdf_pwd=''):
 
 def process_text(text_list):
     """Takes get_text output and cleans it"""
+    from types import StringType
+    from re import sub as _substitute
+    from string import printable as _printable
+
+    def _remove_non_printables(s):
+        """Takes a string and strips all non printable characters"""
+        assert type(s) is StringType, "s is not a string"
+
+        regexp = '[^{0:s}]'.format(_printable)
+        return _substitute(regexp, '', s)
+
+    def _remove_hyphens_from_word_brakes(s):
+        """Remove hyphens due to line break"""
+        assert type(s) is StringType, "s is not a string"
+        return _substitute('-\n', '', s)
+
+    def _clean(text_line):
+        """Help function to drive the text cleaning"""
+        x = _remove_non_printables(text_line)
+        x = _remove_hyphens_from_word_brakes(x)
+        return x
+
+    return map(_clean, text_list)
+
+def process_doc_structure(text_list):
+    """Takes get_text output and cleans it"""
+
+    def _remove_non_printables(s):
+        """Takes a string and strips all non printable characters"""
+        assert type(s) is StringType, "s is not a string"
+
+        regexp = '[^{0:s}]'.format(_printable)
+        return _substitute(regexp, '', s)
+
+    def _remove_hyphens_from_word_brakes(s):
+        """remove hyphens due to line break"""
+        assert type(s) is StringType, "s is not a string"
+        return _substitute('-\n', '', s)
 
     def _take_out_headers(text_list):
         """This function takes a list of paragraphs returns two list of
@@ -72,19 +110,16 @@ def process_text(text_list):
 
         return (large_text, short_text)
 
-    def _remove_hyphens(text_list):
-        """remove hyphens due to line break"""
-        import re
-        return [re.sub('-\n', '', t) for t in text_list]
 
     text = reduce(lambda x,y: x+y, text_list)
     (text, headers) = _take_out_headers(text.split('\n\n'))
     (text, short_text) = _select_large_paragraph(text)
     # text = _remove_hyphens(text)
-    
+
     return (text, short_text, headers)
     # return [paragraph for paragraph in text.split('\n\n')]
 
 if __name__ == '__main__':
-    print get_text("../scratch/papers/cui_2009.pdf")
-    # http://stackoverflow.com/questions/29187195/python-regex-split-alphanumeric-characters-but-remove-and-combine-hyphenated-w
+    t = get_text("../scratch/papers/cui_2009.pdf")
+    tt = process_text(t)
+    print tt
