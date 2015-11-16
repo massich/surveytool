@@ -82,6 +82,7 @@ This project has been structured using this [rr-init repository] as a template.
 
 Todo
 ----
+- [ ] Take a look into this bib realation graphic tool https://github.com/paul-g/bibgraph
 
 ### General
 
